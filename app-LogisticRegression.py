@@ -138,7 +138,7 @@ if uploaded_file is not None:
 # 显示更新后的 data
 st.write(st.session_state['data'])
 
-# 图表绘制
+# 图表绘制 0423
 # fig = go.Figure(go.Indicator(
 #     mode = "gauge+number",
 #     value = result_prob_pos,
