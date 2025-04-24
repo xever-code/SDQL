@@ -4,6 +4,9 @@ import joblib
 import shap
 import plotly.graph_objects as go
 
+st.set_page_config(
+    initial_sidebar_state="expanded",  # 可以是 "auto", "expanded" 或 "collapsed"
+)
 # 初始化 session_state 中的 data
 # 创建一个空的DataFrame来存储预测数据
 if 'data' not in st.session_state:
@@ -11,7 +14,7 @@ if 'data' not in st.session_state:
         columns=['CLEC4M', 'CD24', 'ADH1C', 'SOX17', 'CHRDL1','Prediction', 'Label'])
 
 # 在主页面上显示数据
-st.header('Ovarian Cancer Diagnostic Prediction Model--LogisticRegression')
+st.header('Ovarian Cancer Diagnostic Prediction Model')
 
 # st.markdown("### 本地图片示例")
 # 创建两列布局
@@ -31,6 +34,7 @@ result_prob_pos=0
 
 # 创建一个侧边栏
 st.sidebar.header('Input parameter')
+
 
 # Input bar 1
 a = st.sidebar.number_input('CLEC4M', min_value=0.00, max_value=100.00, value=6.03)
@@ -160,3 +164,6 @@ st.write(
     unsafe_allow_html=True)
 st.markdown('<div style="font-size: 12px; text-align: right;">Powered by MyLab+ i-Research Consulting Team</div>',
             unsafe_allow_html=True)
+
+
+# 你的应用代码...
